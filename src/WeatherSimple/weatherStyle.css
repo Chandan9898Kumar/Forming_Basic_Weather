@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 950px;
+}
+
+.subheader {
+  width: 60%;
+  margin-top: 10px;
+  background-color: cadetblue;
+  height: 500px;
+  margin-left: 0px;
+  margin-right: 0px;
+  border-radius: 10px;
+}
+
+div.label {
+  margin-left: 41%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+div.settingInput {
+  margin-left: 35%;
+}
+input[type="search"].inputField {
+  width: 50%;
+  height: 33px;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: medium;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+div.item {
+  margin-top: 20px;
+  display: inline-block;
+  width: 50%;
+  background-color: rgb(236, 169, 122);
+  margin-left: 20%;
+  padding-left: 150px;
+  height: 300px;
+}
