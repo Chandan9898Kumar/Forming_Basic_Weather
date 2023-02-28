@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./weatherStyle.css";
 import { FaCity} from "react-icons/fa";
 
-let key = "de353db13c74d49bd7bf59c509086b74";
+let key = " ";
 const WeatherApp = () => {
   const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
