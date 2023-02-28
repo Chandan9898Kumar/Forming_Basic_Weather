@@ -20,6 +20,7 @@ body {
   margin-left: 0px;
   margin-right: 0px;
   border-radius: 10px;
+  border-radius: 10px;
 }
 
 div.label {
@@ -40,12 +41,28 @@ input[type="search"].inputField {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-div.item {
+/* div.item {
   margin-top: 20px;
   display: inline-block;
-  width: 50%;
+  width: 100%;
   background-color: rgb(236, 169, 122);
   margin-left: 20%;
   padding-left: 150px;
+  height: 300px;
+} */
+
+div.item {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+div.subItem {
+  margin-top: 20px;
+  width: 60%;
+  background-color: rgb(236, 169, 122);
+  padding-left: 150px;
+  border-radius: 10px;
   height: 300px;
 }
