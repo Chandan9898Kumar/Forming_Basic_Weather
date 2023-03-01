@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.MainComponent {
+    background-image: url("../Assets/weather.png.jpg");
+    background-size: cover;
+    background-position: bottom;
+    transition: 0.4 ease;
+}
+
+main {
+    background-image: linear-gradient(to bottom,
+            rgba(219, 210, 210, 0.2),
+            rgba(0, 0, 0, 0.75));
+    min-height: 100vh;
+    padding: 25px;
+}
+
+.search-box {
+    width: 100%;
+    margin: 0 0 75px;
+}

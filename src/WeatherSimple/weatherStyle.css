@@ -14,13 +14,14 @@ body {
 
 .subheader {
   width: 60%;
-  margin-top: 10px;
+  margin-top: 10%;
   background-color: cadetblue;
   height: 500px;
   margin-left: 0px;
   margin-right: 0px;
   border-radius: 10px;
   border-radius: 10px;
+  margin-bottom: 30%;
 }
 
 div.label {
@@ -60,9 +61,18 @@ div.item {
 
 div.subItem {
   margin-top: 20px;
-  width: 60%;
+  width: 65%;
   background-color: rgb(236, 169, 122);
   padding-left: 150px;
   border-radius: 10px;
-  height: 300px;
+  height: 360px;
+}
+
+
+
+
+@media all and (max-width: 600px) {
+  .subheader {
+    margin-bottom: 38%;
+  }
 }
