@@ -15,6 +15,12 @@ body {
     transition: 0.4 ease;
 }
 
+.warmTemperature {
+    background-image: url("../Assets/WarmWeather.png.jpg");
+    background-size: cover;
+    background-position: bottom;
+}
+
 main {
     background-image: linear-gradient(to bottom,
             rgba(219, 210, 210, 0.2),
@@ -26,4 +32,25 @@ main {
 .search-box {
     width: 100%;
     margin: 0 0 75px;
+    margin-left: 20%;
+}
+
+.search-box .search-bar {
+    display: block;
+    width: 50%;
+    padding: 15px;
+    outline: none;
+    font-size: 20px;
+    background: #444;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    margin-top: 2%;
+    color: white;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 30px;
+    transition: 0.6s ease;
+}
+
+.search-box .search-bar:focus {
+    background: rgba(0, 0, 0, 0.2);
 }

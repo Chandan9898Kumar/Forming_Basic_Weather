@@ -15,6 +15,8 @@ const WeatherApp = () => {
     return () => clearTimeout(Timer);
   }, [search]);
 
+
+//   Used Debounce Approach here.
   const getApiData = () => {
     if (search && search.length) {
       let URL = `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=${key}`;
