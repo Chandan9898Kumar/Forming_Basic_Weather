@@ -106,6 +106,8 @@ The descendant selector matches all elements that are descendants of a specified
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
 
+
+/* Used overflow here because,after minimizing the window,elements inside Div are coming out */
 .errorReport {
   background: #444;
   border-radius: 10px;
@@ -113,6 +115,7 @@ The descendant selector matches all elements that are descendants of a specified
   height: 45px;
   margin-left: 40%;
   padding: 8px;
+  overflow: hidden;
 }
 
 .errorReport .textStyle {
