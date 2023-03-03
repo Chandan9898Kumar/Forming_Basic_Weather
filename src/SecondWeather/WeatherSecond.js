@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import "./WeatherTwoStyle.css";
 
 const api = {
-  key: " ",
+  key: "",
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
 const WeatherTwo = () => {
-  const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
 
   const debounce = (callbackFunction) => {
@@ -34,6 +33,9 @@ const WeatherTwo = () => {
         .then((res) => res.json())
         .then((result) => {
           setWeather(result);
+        })
+        .catch((err) => {
+          console.log(err, "Error...");
         });
     }
   };
@@ -90,40 +92,54 @@ const WeatherTwo = () => {
   const Dates = dateBuilder(new Date());
 
   return (
-    <div
-      className={
-        typeof weather.main !== "undefined"
-          ? weather.main.temp > 15
-            ? "warmTemperature"
+    (
+      <div
+        className={
+          typeof weather.main !== "undefined"
+            ? weather.main.temp > 15
+              ? "warmTemperature"
+              : "MainComponent"
             : "MainComponent"
-          : "MainComponent"
-      }
-    >
-      <main>
-        <div className="search-box">
-          <input
-            className="search-bar"
-            type="search"
-            placeholder="Search for a city ..."
-            onChange={(event) => inputChangeHandler(event.target.value)}
-          />
-        </div>
-
-        {typeof weather.main !== "undefined" ? (
-          <div>
-            <div className="location-box">
-              <div className="location">New York City, US</div>
-              {/* Or we can simply call the function here itself  */}
-              {/* <div className="date">{dateBuilder(new Date())}</div> */}
-
-              <div className="date">{Dates}</div>
-            </div>
+        }
+      >
+        <main>
+          <div className="search-box">
+            <input
+              className="search-bar"
+              type="search"
+              placeholder="Search for a city ..."
+              onChange={(event) => inputChangeHandler(event.target.value)}
+            />
           </div>
-        ) : (
-          ""
-        )}
-      </main>
-    </div>
+
+          {typeof weather.main !== "undefined" ? (
+            <div>
+              <div className="location-box">
+                <div className="location">
+                  {weather.name},{weather.sys.country}
+                </div>
+                {/* Or we can simply call the function here itself  */}
+                {/* <div className="date">{dateBuilder(new Date())}</div> */}
+
+                <div className="date">{Dates}</div>
+              </div>
+
+              <div className="weather-box">
+                <div className="temp">{Math.round(weather.main.temp)}°c</div>
+                <div className="weather">{weather.weather[0].main}</div>
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
+          {weather && weather.message && weather.message.length ? (
+                <div className="errorReport"><h2 className="textStyle">{weather.message}</h2></div>
+              ) : (
+                ""
+              )}
+        </main>
+      </div>
+    )
   );
 };
 export default WeatherTwo;
