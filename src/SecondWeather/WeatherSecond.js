@@ -1,8 +1,18 @@
 import React, { useState } from "react";
 import "./WeatherTwoStyle.css";
 
+// Importing Icons
+import cloudy from "../Assets/cloudy.png";
+import partly from "../Assets/partly-cloudy.png";
+import rain from "../Assets/rainy.png";
+import snowy from "../Assets/snowy.png";
+import stormy from "../Assets/stormy.png";
+import sunny from "../Assets/sunny.png";
+import Haze from "../Assets/Haze.png";
+import Smoke from "../Assets/Smoke.png";
+
 const api = {
-  key: "",
+  key: " ",
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
@@ -88,8 +98,28 @@ const WeatherTwo = () => {
 
     return `${day} ${date} ${month} ${year}`;
   };
-
   const Dates = dateBuilder(new Date());
+
+  let weatherType = [cloudy, partly, rain, snowy, stormy, sunny, Haze, Smoke];
+
+  const getIcon = (type) => {
+    switch (type) {
+      case "Clouds":
+        return weatherType[0];
+
+      case "Haze":
+        return weatherType[6];
+
+      case "Smoke":
+        return weatherType[7];
+
+      case "Rain":
+        return weatherType[2];
+
+      default:
+        return weatherType[0];
+    }
+  };
 
   return (
     (
@@ -126,17 +156,27 @@ const WeatherTwo = () => {
 
               <div className="weather-box">
                 <div className="temp">{Math.round(weather.main.temp)}°c</div>
-                <div className="weather">{weather.weather[0].main}</div>
+                <div className="weather">
+                  <img
+                    className="icon"
+                    src={getIcon(weather.weather[0].main)}
+                    alt="Images"
+                  />
+                  {"  "}
+                  <i style={{ fontSize: "100%" }}>{weather.weather[0].main}</i>
+                </div>
               </div>
             </div>
           ) : (
             ""
           )}
           {weather && weather.message && weather.message.length ? (
-                <div className="errorReport"><h2 className="textStyle">{weather.message}</h2></div>
-              ) : (
-                ""
-              )}
+            <div className="errorReport">
+              <h2 className="textStyle">{weather.message}</h2>
+            </div>
+          ) : (
+            ""
+          )}
         </main>
       </div>
     )

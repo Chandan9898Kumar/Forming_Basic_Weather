@@ -99,13 +99,19 @@ The descendant selector matches all elements that are descendants of a specified
 }
 
 .weather-box .weather {
-  margin-top: 1%;
+  display:block;
+  margin-left: 38%;
+  width: 25%;
+  margin-top: 2%;
   color: #fff;
-  font-size: 48px;
+  font-size: 70px;
   font-weight: 700;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+  height: 5%;
 }
-
 
 /* Used overflow here because,after minimizing the window,elements inside Div are coming out */
 .errorReport {
@@ -121,4 +127,8 @@ The descendant selector matches all elements that are descendants of a specified
 .errorReport .textStyle {
   width: 100%;
   margin-left: 20%;
+}
+
+.icon {
+  width: 80px;
 }
