@@ -1,13 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import ErrorBoundary from "./ErrorBoundary";
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// Wrap you app inside  ErrorBoundary Component. or we can also wrap other component individually
 root.render(
   <React.StrictMode>
-    <App />
+    <ErrorBoundary fallback="Something Went Wrong...">
+      <App />
+    </ErrorBoundary>
   </React.StrictMode>
 );
 
