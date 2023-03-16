@@ -1,8 +1,8 @@
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import { useCallback } from "react";
-import React from "react"
-
+import React from "react";
+import "./homePageStyle.css";
 const HomePage = () => {
   const options = {
     particles: {
@@ -10,27 +10,27 @@ const HomePage = () => {
         value: 50,
         density: {
           enable: true,
-          area: 500
-        }
+          area: 500,
+        },
       },
       color: {
-        value: ["#2EB67D", "#ECB22E", "#E01E5B", "#36C5F0"]
+        value: ["#2EB67D", "#ECB22E", "#E01E5B", "#36C5F0"],
       },
       shape: {
-        type: "circle"
+        type: "circle",
       },
       opacity: {
-        value: 1
+        value: 1,
       },
       size: {
-        value: { min: 1, max: 8 }
+        value: { min: 1, max: 8 },
       },
       links: {
         enable: true,
         distance: 150,
         color: "#808080",
         opacity: 0.4,
-        width: 1
+        width: 1,
       },
       move: {
         enable: true,
@@ -38,32 +38,32 @@ const HomePage = () => {
         direction: "none",
         random: false,
         straight: false,
-        outModes: "out"
-      }
+        outModes: "out",
+      },
     },
     interactivity: {
       events: {
         onHover: {
           enable: true,
-          mode: "grab"
+          mode: "grab",
         },
         onClick: {
           enable: true,
-          mode: "push"
-        }
+          mode: "push",
+        },
       },
       modes: {
         grab: {
           distance: 140,
           links: {
-            opacity: 1
-          }
+            opacity: 1,
+          },
         },
         push: {
-          quantity: 4
-        }
-      }
-    }
+          quantity: 4,
+        },
+      },
+    },
   };
 
   const particlesInit = useCallback(async (engine) => {
@@ -71,13 +71,15 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="App">
+    <div className="parentFile">
+      <div className="heading">
+        <p>Welcome To Weather App</p>
+      </div>
       <Particles options={options} init={particlesInit} />
     </div>
   );
 };
 
 export default HomePage;
-
 
 //  npm i react-particles tsparticles

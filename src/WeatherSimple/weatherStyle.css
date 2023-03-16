@@ -76,4 +76,8 @@ div.subItem {
     margin-bottom: 38%;
     width: 90%;
   }
+  div.subItem{
+    width: 85%;
+  }
+  
 }
