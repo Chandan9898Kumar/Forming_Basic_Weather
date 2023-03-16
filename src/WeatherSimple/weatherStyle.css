@@ -74,5 +74,6 @@ div.subItem {
 @media all and (max-width: 600px) {
   .subheader {
     margin-bottom: 38%;
+    width: 90%;
   }
 }

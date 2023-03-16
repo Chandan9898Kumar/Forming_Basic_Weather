@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  /* background-image: url("./AssetsSecond//wallpaper.jpg"); */
+  /* background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; */
+}
+
+.homeWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  max-width: 100%;
+  background-image: url("./AssetsSecond/soothing.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.weatherSection {
+  display: flex;
+  border-radius: 25px;
+  box-shadow: 4px 6px 6px 7px rgb(0 0 0 / 10%);
+  color: #fff;
+  height: max-content;
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px solid #fff;
+  padding: 0;
+}
+
+.rightSide {
+  color: #000;
+  position: relative;
+  float: left;
+  height: 100%;
+  padding-top: 25px;
+  padding-right: 20px;
+}
+
+.stateMenu {
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  color: black;
+  font-weight: 700;
+  box-shadow: 0 0 30px -5px #00000040;
+  cursor: pointer;
+  transition:  0.4s ease;
+}

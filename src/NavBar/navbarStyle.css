@@ -75,10 +75,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 6%;
   }
 
   .nav-elements {
-    margin-top: 30%;
+    margin-top: 20%;
     background-color: #fef7e5;
     width: 100%;
     transition: all 0.5s ease-in;

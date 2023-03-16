@@ -4,13 +4,16 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ErrorBoundary from "./ErrorBoundary";
+import ContextComponent from "./ThirdWeatherApp/Context/Context";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 // Wrap you app inside  ErrorBoundary Component. or we can also wrap other component individually
 root.render(
   <React.StrictMode>
     <ErrorBoundary fallback="Something Went Wrong...">
-      <App />
+      <ContextComponent>
+        <App />
+      </ContextComponent>
     </ErrorBoundary>
   </React.StrictMode>
 );

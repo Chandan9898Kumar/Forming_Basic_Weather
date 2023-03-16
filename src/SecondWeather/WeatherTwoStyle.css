@@ -132,3 +132,13 @@ The descendant selector matches all elements that are descendants of a specified
 .icon {
   width: 80px;
 }
+
+
+
+@media all and (max-width: 600px) {
+  .search-box {
+    margin-bottom: 38%;
+    width: 150%;
+    margin-top: 50%;
+  }
+}
