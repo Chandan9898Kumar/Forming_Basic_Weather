@@ -4,7 +4,6 @@ import { memo } from "react";
 import { details } from "../Context/Context";
 import { dispatchAction } from "../Context/Context";
 
-
 const KEY = " ";
 const SelectCity = () => {
   const cityDetails = useContext(details);
@@ -25,11 +24,10 @@ const SelectCity = () => {
     });
   };
 
-
   let lat = cityDetails && cityDetails.city.lat ? cityDetails.city.lat : "";
   let long = cityDetails && cityDetails.city.lng ? cityDetails.city.lng : "";
   // let exclude = "hourly";
-  const URL=`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${KEY}`
+  const URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${KEY}`;
   const fetchData = () => {
     fetch(URL)
       .then((response) => response.json())
@@ -42,28 +40,30 @@ const SelectCity = () => {
   };
 
   return (
-    (
-      <>
-        <div className="stateWrap">
-          <select
-            className="stateMenu"
-            // placeholder="Select your city"
-            defaultValue={cityDetails.city}
-            onChange={(event) => onchangeHandle(event)}
-          >
-            {cities &&
-              cities.length &&
-              cities.map((item, id, arr) => {
-                return (
-                  <option key={id} value={item.city}>
-                    {item.city} - {item.admin_name}
-                  </option>
-                );
-              })}
-          </select>
-        </div>
-      </>
-    )
+    <>
+      <div className="stateWrap">
+        <select
+          className="stateMenu"
+          defaultValue={"default"}
+          onChange={(event) => onchangeHandle(event)}
+        >
+          {
+            <option value={"default"} disabled>
+              Choose an option
+            </option>
+          }
+          {cities &&
+            cities.length &&
+            cities.map((item, id, arr) => {
+              return (
+                <option key={id} value={item.city}>
+                  {item.city} - {item.admin_name}
+                </option>
+              );
+            })}
+        </select>
+      </div>
+    </>
   );
 };
 export default memo(SelectCity);
