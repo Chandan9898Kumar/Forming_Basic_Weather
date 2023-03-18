@@ -1,38 +1,20 @@
-import React from 'react'
+const reducer = (state, action) => {
+  console.log("state of reducer", state);
+  console.log(action, "action of reducer");
 
+  const { payload } = action;
+  
+  switch (action.type) {
 
+    case "updateCity":
+      return { ...state, city: payload[0]};
 
-const reducer=(state,action)=>{
-    switch(action.type){
-
-
-
-
-
-
-
-
-
-
-
+    default:
+      return state;
 
 
 
 
-
-        
-
-
-    }
-
-
-
-
-
-
-
-
-}
-export default reducer
-
-
+  }
+};
+export default reducer;

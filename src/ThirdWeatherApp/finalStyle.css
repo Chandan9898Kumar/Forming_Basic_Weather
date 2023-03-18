@@ -57,4 +57,5 @@ body {
   box-shadow: 0 0 30px -5px #00000040;
   cursor: pointer;
   transition:  0.4s ease;
+  font-size: medium;
 }

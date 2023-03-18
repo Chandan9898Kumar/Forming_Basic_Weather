@@ -24,12 +24,10 @@ const Navbar = () => {
             <li>
               <NavLink to="/finalWeather">Styled WeatherApp</NavLink>
             </li>
-            {/* <li>
-              <NavLink to="/about">About</NavLink>
-            </li>
             <li>
-              <NavLink to="/contact">Contact</NavLink>
-            </li> */}
+              <NavLink to="/" className='HomeClass'>Home</NavLink>
+            </li> 
+            
           </ul>
         </div>
       </div>
