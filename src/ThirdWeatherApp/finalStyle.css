@@ -56,6 +56,72 @@ body {
   font-weight: 700;
   box-shadow: 0 0 30px -5px #00000040;
   cursor: pointer;
-  transition:  0.4s ease;
+  transition: 0.4s ease;
+  font-size: medium;
+}
+
+.cardWrap {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+.cardList {
+  list-style-type: none;
+  padding: 0;
+  margin: 12px 0;
+}
+.cardList::after,
+.cardList::before {
+  content: "";
+  overflow: hidden;
+  clear: both;
+  display: table;
+}
+
+.cardList > li {
+  float: left;
+  padding: 15px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  height: 120px;
+}
+
+.cardList > li.active {
+  background: #b3aeae;
+  border-radius: 20px;
+}
+.cardList > li:hover {
+  background: #312e2e;
+  border-radius: 20px;
+  box-shadow: 0 0 40px -5px #0003;
+  transform: scale(1.1);
+}
+
+.weatherIcon {
+  display: block;
+  height: 50px;
+  width: auto;
+  margin: 0 auto;
+}
+
+.weatherCondition {
+  display: block;
+  text-align: center;
+  color: #fff;
+}
+
+.day-temp {
+  display: block;
+  text-align: center;
+  font-size: 700;
+  color: #fff;
+}
+
+.cardList > li.active .weatherCondition {
+  color: #000;
+  font-size: medium;
+}
+.cardList > li.active .day-temp {
+  color: #000;
   font-size: medium;
 }

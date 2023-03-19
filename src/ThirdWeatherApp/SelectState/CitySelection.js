@@ -3,8 +3,9 @@ import cities from "../Data/in.json";
 import { memo } from "react";
 import { details } from "../Context/Context";
 import { dispatchAction } from "../Context/Context";
-
+import "../finalStyle.css";
 const KEY = " ";
+
 const SelectCity = () => {
   const cityDetails = useContext(details);
   const dispatch = useContext(dispatchAction);
@@ -26,13 +27,16 @@ const SelectCity = () => {
 
   let lat = cityDetails && cityDetails.city.lat ? cityDetails.city.lat : "";
   let long = cityDetails && cityDetails.city.lng ? cityDetails.city.lng : "";
-  // let exclude = "hourly";
   const URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${KEY}`;
+
   const fetchData = () => {
     fetch(URL)
       .then((response) => response.json())
       .then((data) => {
-        // console.log(data, "data");
+        dispatch({
+          type: "dailyData",
+          payload: data.list.slice(0, 6),
+        });
       })
       .catch((err) => {
         console.error(err);

@@ -1,23 +1,17 @@
 import React from "react";
 import "./finalStyle.css";
+import WeakInfo from "./WeekInformation/WeakInfo";
 
-
-import SelectCity from './SelectState/CitySelection'
+import SelectCity from "./SelectState/CitySelection";
 const FinalApp = () => {
-
-
-
-
-
-
   return (
     <>
       <div className="homeWrap">
         <div className="weatherSection">
-        left sides
+          left sides
           <div className="rightSide">
-            <SelectCity   />
-            2.weekInfo
+            <SelectCity />
+            <WeakInfo />
             3.humidity
           </div>
         </div>

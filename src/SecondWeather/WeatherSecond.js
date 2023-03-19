@@ -12,7 +12,7 @@ import Haze from "../Assets/Haze.png";
 import Smoke from "../Assets/Smoke.png";
 
 const api = {
-  key: " ",
+  key: "",
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
@@ -122,64 +122,62 @@ const WeatherTwo = () => {
   };
 
   return (
-    (
-      <div
-        className={
-          typeof weather.main !== "undefined"
-            ? weather.main.temp > 15
-              ? "warmTemperature"
-              : "MainComponent"
+    <div
+      className={
+        typeof weather.main !== "undefined"
+          ? weather.main.temp > 15
+            ? "warmTemperature"
             : "MainComponent"
-        }
-      >
-        <main>
-          <div className="search-box">
-            <input
-              className="search-bar"
-              type="search"
-              placeholder="Search for a city ..."
-              onChange={(event) => inputChangeHandler(event.target.value)}
-            />
+          : "MainComponent"
+      }
+    >
+      <main>
+        <div className="search-box">
+          <input
+            className="search-bar"
+            type="search"
+            placeholder="Search for a city ..."
+            onChange={(event) => inputChangeHandler(event.target.value)}
+          />
+        </div>
+
+        {typeof weather.main !== "undefined" ? (
+          <div>
+            <div className="location-box">
+              <div className="location">
+                {weather.name},{weather.sys.country}
+              </div>
+              {/* Or we can simply call the function here itself  */}
+              {/* <div className="date">{dateBuilder(new Date())}</div> */}
+
+              <div className="date">{Dates}</div>
+            </div>
+
+            <div className="weather-box">
+              <div className="temp">{Math.round(weather.main.temp)}°c</div>
+              <div className="weather">
+                <img
+                  className="icon"
+                  src={getIcon(weather.weather[0].main)}
+                  alt="Images"
+                />
+                {"  "}
+                <i style={{ fontSize: "100%" }}>{weather.weather[0].main}</i>
+              </div>
+            </div>
           </div>
-
-          {typeof weather.main !== "undefined" ? (
-            <div>
-              <div className="location-box">
-                <div className="location">
-                  {weather.name},{weather.sys.country}
-                </div>
-                {/* Or we can simply call the function here itself  */}
-                {/* <div className="date">{dateBuilder(new Date())}</div> */}
-
-                <div className="date">{Dates}</div>
-              </div>
-
-              <div className="weather-box">
-                <div className="temp">{Math.round(weather.main.temp)}°c</div>
-                <div className="weather">
-                  <img
-                    className="icon"
-                    src={getIcon(weather.weather[0].main)}
-                    alt="Images"
-                  />
-                  {"  "}
-                  <i style={{ fontSize: "100%" }}>{weather.weather[0].main}</i>
-                </div>
-              </div>
-            </div>
-          ) : (
-            ""
-          )}
-          {weather && weather.message && weather.message.length ? (
-            <div className="errorReport">
-              <h2 className="textStyle">{weather.message}</h2>
-            </div>
-          ) : (
-            ""
-          )}
-        </main>
-      </div>
-    )
+        ) : (
+          ""
+        )}
+        {weather && weather.message && weather.message.length ? (
+          <div className="errorReport">
+            <h2 className="textStyle">{weather.message}</h2>
+          </div>
+        ) : (
+          ""
+        )}
+      </main>
+    </div>
   );
 };
 export default WeatherTwo;
