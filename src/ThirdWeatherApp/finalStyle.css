@@ -83,7 +83,7 @@ body {
   padding: 15px;
   cursor: pointer;
   transition: 0.2s ease;
-  height: 120px;
+  height: 145px;
 }
 
 .cardList > li.active {
@@ -117,6 +117,13 @@ body {
   color: #fff;
 }
 
+.days {
+  display: block;
+  text-align: center;
+  font-size: 700;
+  color: #fff;
+}
+
 .cardList > li.active .weatherCondition {
   color: #000;
   font-size: medium;
@@ -124,4 +131,36 @@ body {
 .cardList > li.active .day-temp {
   color: #000;
   font-size: medium;
+}
+
+.cardList > li.active .days {
+  color: #000;
+  font-size: medium;
+}
+
+.humidityHeading {
+  display: block;
+  background: rgba(0, 0, 0, 0.4);
+  height: 115px;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+.humidity {
+  margin: 10px;
+}
+.pressure {
+  margin: 10px;
+}
+.seaLevel {
+  margin: 10px;
+}
+.groundLevel {
+  margin: 10px;
+}
+
+div.humidityHeading > div:hover {
+  background: rgba(7, 7, 7, 0.9);
+  color: white;
+  border-radius: 10px;
 }

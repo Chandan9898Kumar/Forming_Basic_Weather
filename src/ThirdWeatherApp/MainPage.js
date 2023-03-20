@@ -1,7 +1,7 @@
 import React from "react";
 import "./finalStyle.css";
 import WeakInfo from "./WeekInformation/WeakInfo";
-
+import Humidity from './Humidity/Humidity'
 import SelectCity from "./SelectState/CitySelection";
 const FinalApp = () => {
   return (
@@ -12,7 +12,7 @@ const FinalApp = () => {
           <div className="rightSide">
             <SelectCity />
             <WeakInfo />
-            3.humidity
+            <Humidity />
           </div>
         </div>
       </div>

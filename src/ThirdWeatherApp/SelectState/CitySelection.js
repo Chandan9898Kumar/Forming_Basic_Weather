@@ -35,7 +35,7 @@ const SelectCity = () => {
       .then((data) => {
         dispatch({
           type: "dailyData",
-          payload: data.list.slice(0, 6),
+          payload: data && data.list && data.list.slice(0, 7),
         });
       })
       .catch((err) => {

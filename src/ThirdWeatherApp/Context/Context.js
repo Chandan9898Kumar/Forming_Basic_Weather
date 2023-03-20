@@ -6,18 +6,18 @@ const dispatchAction = createContext(null);
 
 let initial_Val = {
   city: {
-    city: "Bangalore",
-    lat: "12.9699",
-    lng: "77.5980",
-    country: "India",
-    iso2: "IN",
-    admin_name: "Karnātaka",
-    capital: "admin",
-    population: "13707000",
-    population_proper: "8443675",
+    // city: "Bangalore",
+    // lat: "12.9699",
+    // lng: "77.5980",
+    // country: "India",
+    // iso2: "IN",
+    // admin_name: "Karnātaka",
+    // capital: "admin",
+    // population: "13707000",
+    // population_proper: "8443675",
   },
-  current: "",
-  daily: "",
+  currentHumidity: {},
+  daily: {},
 };
 const ContextComponent = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initial_Val);
