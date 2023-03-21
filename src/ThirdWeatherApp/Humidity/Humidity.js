@@ -14,15 +14,30 @@ const Humidity = () => {
           <div className="humidityHeading">
             <div className="humidity">
               <span style={{ color: "white" }}>Humidity</span>
+              <span style={{ color: "white", float: "right" }}>
+                {displayHumidity.humidity}
+              </span>
             </div>
+
             <div className="pressure">
               <span style={{ color: "white" }}>Pressure</span>
+              <span style={{ color: "white", float: "right" }}>
+                {displayHumidity.pressure}
+              </span>
             </div>
+
             <div className="seaLevel">
               <span style={{ color: "white" }}>Sea Level</span>
+              <span style={{ color: "white", float: "right" }}>
+                {displayHumidity.sea_level}
+              </span>
             </div>
+
             <div className="groundLevel">
-              <span style={{ color: "white" }}>Ground Level</span>
+              <span style={{ color: "white" }}>Wind Speed</span>
+              <span style={{ color: "white", float: "right" }}>
+                {currentHumidity.wind.speed} Km/hr
+              </span>
             </div>
           </div>
         )}

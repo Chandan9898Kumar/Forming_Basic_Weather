@@ -4,7 +4,7 @@ import { memo } from "react";
 import { details } from "../Context/Context";
 import { dispatchAction } from "../Context/Context";
 import "../finalStyle.css";
-const KEY = " ";
+const KEY = "de353db13c74d49bd7bf59c509086b74";
 
 const SelectCity = () => {
   const cityDetails = useContext(details);
