@@ -10,9 +10,12 @@ import stormy from "../Assets/stormy.png";
 import sunny from "../Assets/sunny.png";
 import Haze from "../Assets/Haze.png";
 import Smoke from "../Assets/Smoke.png";
+//
+
+import FourNotFourError from "../AnimationFourNotFour/FourNotFour";
 
 const api = {
-  key: "",
+  key: " ",
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
@@ -171,7 +174,8 @@ const WeatherTwo = () => {
         )}
         {weather && weather.message && weather.message.length ? (
           <div className="errorReport">
-            <h2 className="textStyle">{weather.message}</h2>
+            <FourNotFourError />
+            {/* <h2 className="textStyle">{weather.message}</h2> */}
           </div>
         ) : (
           ""
