@@ -16,6 +16,7 @@
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
     "react-svg": "^16.1.6",
+    "sass": "^1.59.3",
     "tsparticles": "^2.9.3",
     "web-vitals": "^2.1.4"
   },

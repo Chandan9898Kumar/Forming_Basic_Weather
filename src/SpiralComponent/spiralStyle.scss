@@ -1,0 +1,47 @@
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+@keyframes move-the-circle {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+    background-color: turquoise;
+  }
+
+  50% {
+    transform: translate(0, 50px) scale(0.4);
+    opacity: 0.4;
+    background-color: blue;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+    background-color: aquamarine;
+  }
+}
+
+div.animation-wrapper {
+  margin: 40px;
+}
+
+.circle {
+  margin-left: 35px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  color: aqua;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: turquoise;
+  animation: move-the-circle 1s infinite;
+  transform-origin: center;
+}
+
+@for $num from 1 through 8 {
+  .circle:nth-child(#{$num}) {
+    left: ($num - 1) * 30px;
+    animation-delay: $num * 0.1s;
+  }
+}
