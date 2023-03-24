@@ -7,6 +7,7 @@ import DisplayLeftScreen from "../ThirdWeatherApp/LeftComponent/LeftComponent";
 import AnimatedImage from "../Animation/AnimatedImage";
 import { details } from "./Context/Context";
 import SpiralComponent from "../SpiralComponent/Spiral";
+import LoaderComponent from "../LoadingComponent/LoaderCom";
 const FinalApp = () => {
   const newDetails = useContext(details);
   return (
@@ -17,8 +18,15 @@ const FinalApp = () => {
           <DisplayLeftScreen />
           <div className="rightSide">
             <SelectCity />
-            <WeakInfo />
-            <Humidity />
+            {newDetails && newDetails.city.city && !newDetails.daily ? (
+              <LoaderComponent />
+            ) : (
+              <>
+                <WeakInfo />
+                <Humidity />
+              </>
+            )}
+
             {newDetails && !newDetails.city.city ? (
               <div>
                 <SpiralComponent />

@@ -10,24 +10,22 @@ import stormy from "../Assets/stormy.png";
 import sunny from "../Assets/sunny.png";
 import Haze from "../Assets/Haze.png";
 import Smoke from "../Assets/Smoke.png";
-//
 
 import FourNotFourError from "../AnimationFourNotFour/FourNotFour";
-
+import LoaderComponent from "../LoadingComponent/LoaderCom";
 const api = {
-  key: " ",
+  key: "de353db13c74d49bd7bf59c509086b74",
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
 const WeatherTwo = () => {
   const [weather, setWeather] = useState({});
-
+  const [load, setLoad] = useState("");
   const debounce = (callbackFunction) => {
     let Timer;
 
     return function (args) {
       // let argument=arguments
-
       let context = this;
 
       if (Timer) {
@@ -41,6 +39,7 @@ const WeatherTwo = () => {
   };
 
   const reduce = (inputValue) => {
+    setLoad(inputValue);
     if (inputValue && inputValue.length) {
       fetch(`${api.base}weather?q=${inputValue}&appid=${api.key}&units=metric`)
         .then((res) => res.json())
@@ -140,7 +139,9 @@ const WeatherTwo = () => {
             className="search-bar"
             type="search"
             placeholder="Search for a city ..."
-            onChange={(event) => inputChangeHandler(event.target.value)}
+            onChange={(event) => {
+              inputChangeHandler(event.target.value);
+            }}
           />
         </div>
 
@@ -170,12 +171,14 @@ const WeatherTwo = () => {
             </div>
           </div>
         ) : (
-          ""
+          load &&
+          load.length &&
+          weather &&
+          weather.cod !== "404" && <LoaderComponent />
         )}
-        {weather && weather.message && weather.message.length ? (
+        {weather && weather.cod && weather.cod === "404" ? (
           <div className="errorReport">
             <FourNotFourError />
-            {/* <h2 className="textStyle">{weather.message}</h2> */}
           </div>
         ) : (
           ""

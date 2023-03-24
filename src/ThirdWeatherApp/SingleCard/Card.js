@@ -24,7 +24,7 @@ const SingleCard = ({ item, className, onClick, itemId, ...props }) => {
         <span className="weatherCondition">{item.weather[0].main}</span>
         <br />
         <span className="day-temp">
-          {Math.round((item.main.temp - 32) / 1.8)}°C
+          {Math.round((item.main.temp - 32) / 1.8)/5}°C
         </span>
       </li>
     </>
