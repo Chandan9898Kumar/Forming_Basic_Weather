@@ -7,7 +7,7 @@ describe("Render Weather App Component", () => {
     render(<WeatherApp />);
     const text = screen.getByText(/Weather App/i);
     expect(text).toBeInTheDocument();
-    screen.debug()
+    // screen.debug()
   });
 
 it('should hit on input filed',()=>{
