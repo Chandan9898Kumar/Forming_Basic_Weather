@@ -1,3 +1,5 @@
+[![Continuous Integration (CI)](https://github.com/Chandan9898Kumar/Forming_Basic_Weather/actions/workflows/Continuous_Integration.yml/badge.svg)](https://github.com/Chandan9898Kumar/Forming_Basic_Weather/actions/workflows/Continuous_Integration.yml)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
