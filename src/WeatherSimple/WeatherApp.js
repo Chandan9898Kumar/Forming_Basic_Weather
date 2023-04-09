@@ -38,6 +38,7 @@ const WeatherApp = () => {
 
         <div className="settingInput">
           <input
+            data-testid="inputField"
             className="inputField"
             type="search"
             placeholder="Search ..."
