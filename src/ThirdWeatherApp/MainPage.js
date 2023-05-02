@@ -3,7 +3,7 @@ import "./finalStyle.css";
 import WeakInfo from "./WeekInformation/WeakInfo";
 import Humidity from "./Humidity/Humidity";
 import SelectCity from "./SelectState/CitySelection";
-import DisplayLeftScreen from "../ThirdWeatherApp/LeftComponent/LeftComponent";
+import DisplayLeftScreen from "../ThirdWeatherApp/leftComponent/LeftComponent";
 import AnimatedImage from "../Animation/AnimatedImage";
 import { details } from "./Context/Context";
 import SpiralComponent from "../SpiralComponent/Spiral";
