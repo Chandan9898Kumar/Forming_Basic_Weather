@@ -1,5 +1,5 @@
-import Particles from "react-particles";
-import { loadFull } from "tsparticles";
+// import Particles from "react-particles";
+// import { loadFull } from "tsparticles";
 import { useCallback } from "react";
 import React from "react";
 import "./homePageStyle.css";
@@ -66,9 +66,9 @@ const HomePage = () => {
     },
   };
 
-  const particlesInit = useCallback(async (engine) => {
-    await loadFull(engine);
-  }, []);
+  // const particlesInit = useCallback(async (engine) => {
+  //   await loadFull(engine);
+  // }, []);
 
   return (
     <div className="parentFile">
