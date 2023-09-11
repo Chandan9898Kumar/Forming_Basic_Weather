@@ -75,7 +75,7 @@ const HomePage = () => {
       <div className="heading">
         <p>Welcome To Weather App</p>
       </div>
-      <Particles options={options} init={particlesInit} />
+      {/* <Particles options={options} init={particlesInit} /> */}
     </div>
   );
 };
