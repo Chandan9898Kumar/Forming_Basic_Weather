@@ -4,15 +4,20 @@ import { memo } from "react";
 import { details } from "../Context/Context";
 import { dispatchAction } from "../Context/Context";
 import "../finalStyle.css";
-const KEY = "de353db13c74d49bd7bf59c509086b74";
 
 const SelectCity = () => {
   const cityDetails = useContext(details);
   const dispatch = useContext(dispatchAction);
 
+  let lat = cityDetails && cityDetails.city.lat ? cityDetails.city.lat : "";
+  let long = cityDetails && cityDetails.city.lng ? cityDetails.city.lng : "";
+  const URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${process.env.REACT_APP_MY_API_KEY}`;
+
   useEffect(() => {
-    fetchData();
-  }, [cityDetails.city]);
+    if (lat && long) {
+      fetchData();
+    }
+  }, [lat,long]);
 
   const onchangeHandle = (event) => {
     const selectedCity = cities.filter((item, id, arr) =>
@@ -24,10 +29,6 @@ const SelectCity = () => {
       payload: selectedCity,
     });
   };
-
-  let lat = cityDetails && cityDetails.city.lat ? cityDetails.city.lat : "";
-  let long = cityDetails && cityDetails.city.lng ? cityDetails.city.lng : "";
-  const URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${KEY}`;
 
   const fetchData = () => {
     fetch(URL)
