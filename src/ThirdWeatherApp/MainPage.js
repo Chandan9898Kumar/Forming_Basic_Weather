@@ -8,8 +8,10 @@ import AnimatedImage from "../Animation/AnimatedImage";
 import { details } from "./Context/Context";
 import SpiralComponent from "../SpiralComponent/Spiral";
 import LoaderComponent from "../LoadingComponent/LoaderCom";
+
 const FinalApp = () => {
   const newDetails = useContext(details);
+
   return (
     <>
       <div className="homeWrap">
@@ -40,6 +42,7 @@ const FinalApp = () => {
     </>
   );
 };
+
 export default FinalApp;
 
 //   npm i dayjs
