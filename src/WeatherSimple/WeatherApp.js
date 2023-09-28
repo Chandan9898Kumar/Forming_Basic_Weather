@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./weatherStyle.css";
 import { FaCity } from "react-icons/fa";
 
-let key = "de353db13c74d49bd7bf59c509086b74";
 const WeatherApp = () => {
   const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
@@ -18,7 +17,7 @@ const WeatherApp = () => {
   //   Used Debounce Approach here.
   const getApiData = () => {
     if (search && search.length) {
-      let URL = `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=${key}`;
+      let URL = `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=${process.env.REACT_APP_MY_API_KEY}`;
       fetch(URL)
         .then((response) => response.json())
         .then((result) => setData(result))
