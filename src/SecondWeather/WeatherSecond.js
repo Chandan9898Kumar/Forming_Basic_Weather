@@ -14,7 +14,7 @@ import Smoke from "../Assets/Smoke.png";
 import FourNotFourError from "../AnimationFourNotFour/FourNotFour";
 import LoaderComponent from "../LoadingComponent/LoaderCom";
 const api = {
-  key: "de353db13c74d49bd7bf59c509086b74",
+  key: process.env.REACT_APP_MY_API_KEY,
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
