@@ -44,6 +44,7 @@ const FourNotFourError = () => {
           className="image-404"
           src="http://salehriaz.com/404Page/img/404.svg"
           width="300px"
+          alt="Images"
         />
       </div>
       <div className="objects">
@@ -51,17 +52,20 @@ const FourNotFourError = () => {
           className="object_rocket"
           src="http://salehriaz.com/404Page/img/rocket.svg"
           width="40px"
+          alt="Rocket"
         />
         <div className="earth-moon">
           <img
             className="object_earth"
             src="http://salehriaz.com/404Page/img/earth.svg"
             width="100px"
+            alt="Earth"
           />
           <img
             className="object_moon"
             src="http://salehriaz.com/404Page/img/moon.svg"
             width="80px"
+            alt="Moon"
           />
         </div>
         <div className="box_astronaut">
@@ -69,6 +73,7 @@ const FourNotFourError = () => {
             className="object_astronaut"
             src="http://salehriaz.com/404Page/img/astronaut.svg"
             width="140px"
+            alt="Astronaut"
           />
         </div>
       </div>
